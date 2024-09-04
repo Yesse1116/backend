@@ -109,6 +109,21 @@ profesor2.inscribirCurso(cursoMatematica)
 profesor1.mostrarInformacion()
 profesor2.mostrarInformacion()
  */
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var Producto = /** @class */ (function () {
     function Producto(nombre, precio, cantidad) {
         this.nombre = nombre;
@@ -138,6 +153,28 @@ var Persona = /** @class */ (function () {
 var persona1 = new Persona("Juan", 15, "aaa");
 var persona2 = new Persona("Rodrigo", 25);
 var persona3 = new Persona("Santiago", 32);
-console.log("producto: ".concat(persona3.nombre, ", ").concat(persona3.edad, ", ").concat(persona3.profesion));
-console.log("producto: ".concat(persona2.nombre, ", ").concat(persona2.edad, " ").concat(persona2.profesion));
-console.log("producto: ".concat(persona1.nombre, ", ").concat(persona1.edad, " ").concat(persona1.profesion));
+console.log("persona: ".concat(persona3.nombre, ", ").concat(persona3.edad, ", ").concat(persona3.profesion));
+console.log("persona: ".concat(persona2.nombre, ", ").concat(persona2.edad, ", ").concat(persona2.profesion));
+console.log("persona: ".concat(persona1.nombre, ", ").concat(persona1.edad, ", ").concat(persona1.profesion));
+var Animal = /** @class */ (function () {
+    function Animal(nombre) {
+        this.nombre = nombre;
+    }
+    Animal.prototype.mover = function () {
+        console.log("".concat(this.nombre, " se mueve y salta"));
+    };
+    return Animal;
+}());
+var Perro = /** @class */ (function (_super) {
+    __extends(Perro, _super);
+    function Perro() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Perro.prototype.ladrar = function () {
+        console.log("".concat(this.nombre, " ladra mucho"));
+    };
+    return Perro;
+}(Animal));
+var miPerro = new Perro("Kiwi");
+miPerro.mover();
+miPerro.ladrar();

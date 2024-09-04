@@ -150,6 +150,25 @@ const persona1 = new Persona( "Juan", 15, "aaa")
 const persona2 = new Persona( "Rodrigo", 25)
 const persona3 = new Persona( "Santiago", 32)
 
-console.log (`producto: ${persona3.nombre}, ${persona3.edad}, ${persona3.profesion}`)
-console.log (`producto: ${persona2.nombre}, ${persona2.edad} ${persona2.profesion}`)
-console.log (`producto: ${persona1.nombre}, ${persona1.edad} ${persona1.profesion}`)
+console.log (`persona: ${persona3.nombre}, ${persona3.edad}, ${persona3.profesion}`)
+console.log (`persona: ${persona2.nombre}, ${persona2.edad}, ${persona2.profesion}`)
+console.log (`persona: ${persona1.nombre}, ${persona1.edad}, ${persona1.profesion}`)
+
+class Animal {
+    nombre: string;
+
+    constructor(nombre: string) {
+        this.nombre = nombre;
+    }
+    mover() {
+        console.log(`${this.nombre} se mueve y salta`);
+    }
+}
+class Perro extends Animal {
+    ladrar() {
+        console.log(`${this.nombre} ladra mucho`);
+    }
+}
+const miPerro = new Perro("Kiwi");
+miPerro.mover(); 
+miPerro.ladrar();
